@@ -1,6 +1,8 @@
 # slackbot-python
 
 This repo consists of two main folders:
+
+
 1. mongobot --> contains the main logic of commands to be executed by the Bot
 
 
