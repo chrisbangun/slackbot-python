@@ -11,10 +11,7 @@ logger = logging.getLogger(__name__)
 
 AT_MESSAGE_MATCHER = re.compile(r'^\<@(\w+)\>:? (.*)$')
 
-USERNAME = ["adichris","jordan","riko","rachmad","andy_saputra","kevin","ronny","refky","purwoko","derianto","jiwo","irfan",
-            "stephen","hendrik.tanzil","yogaharyanto","antony-halim",
-            "fajrin","muhsin","felix","irvan","rendybjunior","michel-slm",
-             "asendia","ricky","semmatabei"]
+USERNAME = ["List of People that permitted to talk with the Bot"]
 
 class MessageDispatcher(object):
     def __init__(self, slackclient, plugins):
