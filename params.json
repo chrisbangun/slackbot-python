@@ -1,0 +1,6 @@
+{
+  "name": "SlackBot to run Mongoscript",
+  "tagline": "python, slackbot, mongoscript",
+  "body": "# slackbot-python\r\n\r\nThis repo consists of two main folders:\r\n\r\n\r\n1. mongobot --> contains the main logic of commands to be executed by the Bot\r\n\r\n\r\n2. slackbot --> contains codes that made the bot \"alive\"\r\n\r\n\r\n\r\nMost part of the code in slackbot are mainly taken from https://github.com/lins05/slackbot. You can refer to that link in order to install slackbot in your machine.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
