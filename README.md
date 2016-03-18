@@ -10,4 +10,4 @@ This repo consists of two main folders:
 
 
 
-Most part of the code in slacbot are mainly taken from https://github.com/lins05/slackbot. You can refer to that link in order to install slackbot in your machine.
+Most part of the code in slackbot are mainly taken from https://github.com/lins05/slackbot. You can refer to that link in order to install slackbot in your machine.
