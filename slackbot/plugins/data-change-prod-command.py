@@ -26,7 +26,7 @@ def getArgument(param):
 @respond_to('git pull')
 def git_pull(message):
   message.reply_webapi("*please wait*")
-  command = "sh /home/ubuntu/analytics/repository/pull_datamigrations_schedule_15min.sh"
+  command = "sh /home/mongoscript/analytics/repository/pull_datamigrations_schedule_15min.sh"
   try:
     commandResult = runCommand(command)
     message.reply_webapi("```%s```" %commandResult)
@@ -47,10 +47,23 @@ def connectMongoscript03(message):
    """
   message.reply_webapi("``` %s ```" % text)
 
+def change_mailto_to_email_only(param):
+  mailto_index = param.find("<mailto")
+  end_mailto_index = param.find("com>")
+  email_index = param.find("com|")
+  if mailto_index != -1 and end_mailto_index != -1 and email_index != -1:
+    old_string = param[mailto_index:end_mailto_index+4]
+    new_string = param[mailto_index+8:email_index+3]
+    param = param.replace(old_string,new_string)
+  return param
+
 @respond_to('mongo (.*)')
 def mongoscriptMongo(message,param):
   message.reply_webapi("*please wait...*")
-  command = "/home/ubuntu/mongobot/mongoscript03_command.py mongo "+param
+
+  param = change_mailto_to_email_only(param)
+
+  command = "/home/mongoscript/mongobot/mongoscript03_command.py mongo "+param
   try:
     commandResult = runCommand(command)
     message.reply_webapi("```%s```" %commandResult)
@@ -70,7 +83,7 @@ def mongoscript03Run(message,param1,param2):
     param1 = PREV_DIR
   print param1
   print fileName
-  command = "/home/ubuntu/mongobot/mongoscript03_command.py dir="+param1+" run="+fileName+" "+arguments
+  command = "/home/mongoscript/mongobot/mongoscript03_command.py dir="+param1+" run="+fileName+" "+arguments
   print "argument: ",arguments
   message.reply_webapi("*Please wait*")
   try:
@@ -94,7 +107,7 @@ def mongoscript03LsInDir(message,directory):
     directory = appendPrevDir(Dirs)
   elif directory == "prev":
     directory = PREV_DIR
-  command = "/home/ubuntu/mongobot/mongoscript03_command.py dir="+directory+" ls"
+  command = "/home/mongoscript/mongobot/mongoscript03_command.py dir="+directory+" ls"
   try:
     commandResult = runCommand(command)
     message.reply_webapi("``` %s ```" %str(commandResult))
