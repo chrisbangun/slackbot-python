@@ -7,7 +7,7 @@ PLUGINS = [
     
 ]
 
-API_TOKEN = 'xoxb-20180334097-HwORZoVQ5qgJM24lMzSIkzja'
+API_TOKEN = 'Your slackbot token from SLACK'
 
 for key in os.environ:
     if key[:9] == 'SLACKBOT_':
